@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<h3>TRA TỪ ĐIỂN ANH - VIỆT</h3>
+<input type="text" id="tu"><br>
+<button type="button" onclick="show()">Tra nghĩa</button>
+<div id="ketqua"></div>
+<script>
+    var eng = ["pen", "ruler", "pencil", "erase", "book"];
+    var vi = ["bút bi", "thước kẻ", "bút chì", "cục tẩy bút chì", "quyển sách"];
+
+    function show() {
+        var tu = document.getElementById("tu").value;
+        var kq = 0;
+        for (var i = 0; i < eng.length; i++) {
+            if (tu == eng[i]) {
+                document.getElementById("ketqua").innerHTML = vi[i];
+                kq = 1;
+            }
+        }
+        if (kq == 0) {
+            document.getElementById("ketqua").innerHTML = "Từ vừa nhập không có";
+        }
+    }
+</script>
+</body>
+</html>
